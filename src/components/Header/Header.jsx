@@ -2,11 +2,14 @@ import "../../styles/header.css";
 import { AudioToggle } from "./AudioToggle";
 import { ScrollIndicator } from "./ScrollIndicator";
 
-export function Header() {
+export function Header({ isPlaying, onToggle }) {
   return (
     <header id="site-header">
       <ScrollIndicator />
-      <AudioToggle />
+      <AudioToggle
+        isPlaying={isPlaying}
+        onToggle={onToggle}
+      />
     </header>
   );
 }

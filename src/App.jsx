@@ -2,9 +2,11 @@ import { Header } from "./components/Header/Header";
 import { Loader } from "./components/Loader/Loader";
 import { Hero } from "./components/Hero/Hero";
 import { useLoader } from "./hooks/useLoader";
+import { useAudio } from "./hooks/useAudio";
 
 function App() {
   const { progress, isFading, showLoader, isComplete } = useLoader();
+  const { audioRef, isPlaying, toggleAudio } = useAudio();
 
   return (
     <>
@@ -12,7 +14,20 @@ function App() {
 
       {isComplete && (
         <>
-          <Header />
+          <audio
+            ref={audioRef}
+            loop
+            preload="auto"
+          >
+            <source
+              src="/audio/stranger_things.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+          <Header
+            isPlaying={isPlaying}
+            onToggle={toggleAudio}
+          />
           <main>
             <Hero />
             <div style={{ height: "300vh" }}></div>

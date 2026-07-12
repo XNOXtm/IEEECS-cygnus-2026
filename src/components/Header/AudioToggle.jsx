@@ -1,17 +1,8 @@
-import { useState } from "react";
-
 export function AudioToggle({ isPlaying: controlledPlaying, onToggle }) {
-  const [localPlaying, setLocalPlaying] = useState(false);
-
-  const isControlled = controlledPlaying !== undefined;
-  const isPlaying = isControlled ? controlledPlaying : localPlaying;
+  const isPlaying = controlledPlaying;
 
   const handleClick = () => {
-    if (onToggle) {
-      onToggle(!isPlaying);
-    } else if (!isControlled) {
-      setLocalPlaying((prev) => !prev);
-    }
+    onToggle();
   };
 
   return (
