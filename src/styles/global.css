@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+body.loading .parallax-container,
+body.loading .content,
+body.loading #site-header {
+  opacity: 0;
+}
+
+body.loaded .parallax-container,
+body.loaded .content,
+body.loaded #site-header {
+  opacity: 1;
+  transition: opacity 0.8s ease 0.3s;
+}

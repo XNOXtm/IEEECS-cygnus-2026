@@ -1,0 +1,128 @@
+#site-header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 40px;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  #site-header {
+    padding: 25px;
+  }
+}
+
+#scroll-indicator {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 1;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+#scroll-indicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+#scroll-indicator .chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scroll-indicator .chevron {
+  width: auto;
+  height: 20px;
+  color: rgba(255, 21, 21, 0.2);
+  margin-top: -8px;
+  animation: chevronFade 1.5s ease-in-out infinite;
+}
+
+#scroll-indicator .chevron:first-child {
+  margin-top: 0;
+  animation-delay: 0s;
+}
+
+#scroll-indicator .chevron:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+#scroll-indicator .chevron:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes chevronFade {
+  0%,
+  100% {
+    color: rgba(255, 21, 21, 0.2);
+  }
+  40%,
+  60% {
+    color: rgba(255, 21, 21, 1);
+  }
+}
+
+#scroll-indicator span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  display: none;
+}
+
+#audio-toggle {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #ff1515;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#audio-toggle:hover {
+  background: rgba(255, 21, 21, 0.3);
+  border-color: #ff1515;
+  transform: scale(1.1);
+}
+
+#audio-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+
+#audio-toggle .icon-unmuted {
+  display: none;
+}
+
+#audio-toggle .icon-muted {
+  display: block;
+}
+
+#audio-toggle.playing .icon-unmuted {
+  display: block;
+}
+
+#audio-toggle.playing .icon-muted {
+  display: none;
+}
