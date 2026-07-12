@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background */
+
+.parallax-bg {
+  position: fixed;
+  inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1586px;
+  height: 100vh;
+  z-index: 1;
+}
+
+.parallax-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Trees */
+
+.parallax-trees {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.parallax-trees img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.parallax-trees-left {
+  --tree-offset: 0px;
+  transform: translateX(calc(-100% - var(--tree-offset)));
+}
+
+.parallax-trees-right {
+  --tree-offset: 0px;
+  transform: translateX(var(--tree-offset));
+}
+
+/* Foreground */
+
+.parallax-fg {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1586px;
+  min-width: 1000px;
+  z-index: 3;
+}
+
+.parallax-fg img {
+  width: 100%;
+  display: block;
+}
+
+/* Hero logo placeholder */
+
+.hero-logo {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.hero-logo {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-top: 60px;
+
+  pointer-events: none;
+}
+
+.hero-logo-image {
+  width: 300px;
+  max-width: 80vw;
+  height: auto;
+
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.25));
+}
+
+.hero-presents {
+  margin-top: 8px;
+
+  color: white;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  opacity: 0.85;
+}

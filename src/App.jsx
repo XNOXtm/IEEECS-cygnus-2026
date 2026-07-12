@@ -1,5 +1,6 @@
 import { Header } from "./components/Header/Header";
 import { Loader } from "./components/Loader/Loader";
+import { Hero } from "./components/Hero/Hero";
 import { useLoader } from "./hooks/useLoader";
 
 function App() {
@@ -12,7 +13,10 @@ function App() {
       {isComplete && (
         <>
           <Header />
-          <main>{/* Parallax, Hero, Footer — added in later steps */}</main>
+          <main>
+            <Hero />
+            <div style={{ height: "300vh" }}></div>
+          </main>
         </>
       )}
     </>
