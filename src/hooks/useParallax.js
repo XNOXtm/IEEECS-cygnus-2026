@@ -18,6 +18,7 @@ export function useParallax() {
   const fgRef = useRef(null);
   const leftTreeRef = useRef(null);
   const rightTreeRef = useRef(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     let treeBaseOffset = 0;
@@ -67,6 +68,15 @@ export function useParallax() {
       if (fgRef.current) {
         fgRef.current.style.transform = `translateX(-50%) translateY(${fgOffset}px) scale(${scale})`;
       }
+
+      if (contentRef.current) {
+        if (progress < 1) {
+          contentRef.current.style.marginTop = `${vh}px`;
+        } else {
+          const extra = scrollY - vh;
+          contentRef.current.style.marginTop = `${vh - extra}px`;
+        }
+      }
     }
 
     updateTreeOffset();
@@ -86,5 +96,6 @@ export function useParallax() {
     fgRef,
     leftTreeRef,
     rightTreeRef,
+    contentRef,
   };
 }

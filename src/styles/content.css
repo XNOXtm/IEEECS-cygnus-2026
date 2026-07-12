@@ -1,0 +1,22 @@
+.content {
+  position: relative;
+  z-index: 3;
+  margin-top: 100vh;
+  background: #000;
+  color: white;
+}
+
+.sticky-logo {
+  display: block;
+
+  width: 66vw;
+  max-width: 800px;
+  height: auto;
+
+  margin: 0 auto;
+
+  position: sticky;
+  top: 50%;
+
+  transform: translateY(-50%);
+}

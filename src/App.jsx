@@ -1,16 +1,25 @@
 import { Header } from "./components/Header/Header";
 import { Loader } from "./components/Loader/Loader";
 import { Hero } from "./components/Hero/Hero";
+import { Content } from "./components/Content/Content";
+import { Footer } from "./components/Footer/Footer";
+
 import { useLoader } from "./hooks/useLoader";
 import { useAudio } from "./hooks/useAudio";
 
 function App() {
   const { progress, isFading, showLoader, isComplete } = useLoader();
+
   const { audioRef, isPlaying, toggleAudio } = useAudio();
 
   return (
     <>
-      {showLoader && <Loader progress={progress} isFading={isFading} />}
+      {showLoader && (
+        <Loader
+          progress={progress}
+          isFading={isFading}
+        />
+      )}
 
       {isComplete && (
         <>
@@ -24,14 +33,17 @@ function App() {
               type="audio/mpeg"
             />
           </audio>
+
           <Header
             isPlaying={isPlaying}
             onToggle={toggleAudio}
           />
-          <main>
-            <Hero />
-            <div style={{ height: "300vh" }}></div>
-          </main>
+
+          <Hero />
+
+          <Content />
+
+          <Footer />
         </>
       )}
     </>

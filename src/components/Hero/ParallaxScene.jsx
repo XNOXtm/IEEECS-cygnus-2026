@@ -1,9 +1,7 @@
-import { useParallax } from "../../hooks/useParallax.js";
+// import { useParallax } from "../../hooks/useParallax.js";
 import { HeroLogo } from "./HeroLogo.jsx";
 
-export function ParallaxScene() {
-  const { bgRef, fgRef, leftTreeRef, rightTreeRef } = useParallax();
-
+export function ParallaxScene({bgRef,fgRef,leftTreeRef,rightTreeRef}) {
   return (
     <div className="parallax-container">
       <HeroLogo />
