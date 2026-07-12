@@ -1,12 +1,12 @@
 import "../../styles/hero.css";
 import { ParallaxScene } from "./ParallaxScene";
-import { HeroLogo } from "./HeroLogo";
+import { StickyLogo } from "./StickyLogo";
 
 export function Hero() {
   return (
     <section className="hero">
       <ParallaxScene />
-      <HeroLogo />
+      <StickyLogo />
     </section>
   );
 }

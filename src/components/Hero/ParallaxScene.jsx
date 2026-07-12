@@ -1,10 +1,12 @@
 import { useParallax } from "../../hooks/useParallax.js";
+import { HeroLogo } from "./HeroLogo.jsx";
 
 export function ParallaxScene() {
   const { bgRef, fgRef, leftTreeRef, rightTreeRef } = useParallax();
 
   return (
     <div className="parallax-container">
+      <HeroLogo />
       <div className="parallax-bg" ref={bgRef}>
         <img src="/images/strange-bg-sans-trees.png" alt="Background" />
       </div>
