@@ -1,0 +1,207 @@
+:root {
+  --scale: 1;
+
+  --digit-width: calc(42px * var(--scale));
+  --digit-height: calc(72px * var(--scale));
+
+  --seg-h-width: calc(28px * var(--scale));
+  --seg-h-height: calc(6px * var(--scale));
+
+  --seg-v-width: calc(6px * var(--scale));
+  --seg-v-height: calc(28px * var(--scale));
+
+  --seg-h-left: calc(7px * var(--scale));
+
+  --seg-v-offset: 0;
+
+  --seg-b-top: calc(5px * var(--scale));
+  --seg-c-top: calc(39px * var(--scale));
+  --seg-g-top: calc(33px * var(--scale));
+
+  --blur-amount: calc(8px * var(--scale));
+
+  --gap-display: 18px;
+  --gap-wrapper: 16px;
+  --gap-digit: 6px;
+  --gap-separator: 18px;
+  --pad-separator: 14px;
+
+  --dot-size: 8px;
+
+  --label-size: 0.8rem;
+}
+
+.countdown {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 20;
+}
+
+.countdown h2 {
+  color: #ff2a2a;
+
+  font-size: 2.2rem;
+
+  letter-spacing: 0.5rem;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  text-shadow:
+    0 0 10px rgba(255, 30, 30, 0.6),
+    0 0 30px rgba(255, 30, 30, 0.3);
+}
+
+.countdown-display {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-display);
+  margin-bottom: 40px;
+}
+
+.digit-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-wrapper);
+}
+
+.digit-group {
+  display: flex;
+  gap: var(--gap-digit);
+}
+
+.digit {
+  width: var(--digit-width);
+  height: var(--digit-height);
+  position: relative;
+}
+
+.segment-wrap {
+  position: absolute;
+}
+
+.segment-glow {
+  position: absolute;
+  background: #ff2a2a;
+  opacity: 0;
+  filter: blur(var(--blur-amount));
+  transition: opacity 0.1s;
+  pointer-events: none;
+}
+
+.segment-wrap.on .segment-glow {
+  opacity: 1;
+}
+
+.segment {
+  position: absolute;
+  background: #330000;
+  transition: background 0.1s;
+}
+
+.segment-wrap.on .segment {
+  background: #ff2a2a;
+}
+
+.segment-wrap.h {
+  width: var(--seg-h-width);
+  height: var(--seg-h-height);
+  left: var(--seg-h-left);
+}
+
+.segment-wrap.h .segment {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 50%, 10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%);
+}
+
+.segment-wrap.h .segment-glow {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.segment-wrap.v {
+  width: var(--seg-v-width);
+  height: var(--seg-v-height);
+}
+
+.segment-wrap.v .segment {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+}
+
+.segment-wrap.v .segment-glow {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.segment-wrap.a {
+  top: 0;
+}
+.segment-wrap.b {
+  top: var(--seg-b-top);
+  right: var(--seg-v-offset);
+}
+.segment-wrap.c {
+  top: var(--seg-c-top);
+  right: var(--seg-v-offset);
+}
+.segment-wrap.d {
+  bottom: 0;
+}
+.segment-wrap.e {
+  top: var(--seg-c-top);
+  left: var(--seg-v-offset);
+}
+.segment-wrap.f {
+  top: var(--seg-b-top);
+  left: var(--seg-v-offset);
+}
+.segment-wrap.g {
+  top: var(--seg-g-top);
+}
+
+.separator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-separator);
+  padding: var(--pad-separator) var(--gap-digit) 0;
+}
+
+.separator-dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: #ff2a2a;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px #ff2a2a,
+    0 0 15px #ff2a2a,
+    0 0 30px rgba(255, 42, 42, 0.6),
+    0 0 50px rgba(255, 42, 42, 0.4);
+}
+
+.time-label {
+  font-size: var(--label-size);
+  color: #ff2a2a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(255, 42, 42, 0.8),
+    0 0 15px rgba(255, 42, 42, 0.5);
+}
