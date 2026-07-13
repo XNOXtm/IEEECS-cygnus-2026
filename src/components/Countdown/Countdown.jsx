@@ -2,6 +2,7 @@ import "../../styles/countdown.css";
 
 import { DigitGroup } from "./DigitGroup";
 import { Separator } from "./Separator";
+import { AccessPanel } from "../AccessPanel/AccessPanel";
 
 import { useCountdown } from "../../hooks/useCountdown";
 
@@ -41,6 +42,8 @@ export function Countdown({ countdownRef }) {
           <span className="time-label">Sec</span>
         </div>
       </div>
+
+      <AccessPanel />
     </div>
   );
 }
