@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 export function useReveal() {
   const wrapperRef = useRef(null);
   const logoRef = useRef(null);
+  const countdownRef = useRef(null);
+  const overlayRef = useRef(null);
 
   useEffect(() => {
     function updateReveal() {
@@ -32,6 +34,10 @@ export function useReveal() {
       logoRef.current.style.transform = `translateY(calc(-50% + ${y}px)) scale(1)`;
 
       if (entered < vh * 1.6) {
+        if (countdownRef.current) countdownRef.current.style.opacity = 0;
+
+        if (overlayRef.current) overlayRef.current.style.opacity = 0;
+
         return;
       }
 
@@ -44,6 +50,19 @@ export function useReveal() {
       const scale = 1 + zoomProgress * 8;
 
       logoRef.current.style.opacity = 1 - zoomProgress;
+      if (overlayRef.current) {
+        overlayRef.current.style.opacity = zoomProgress;
+      }
+
+      if (countdownRef.current) {
+        let fade = 0;
+
+        if (zoomProgress > 0.2) {
+          fade = (zoomProgress - 0.2) / 0.5;
+        }
+
+        countdownRef.current.style.opacity = Math.min(1, fade);
+      }
 
       logoRef.current.style.transform = `translateY(-50%) scale(${scale})`;
     }
@@ -60,5 +79,7 @@ export function useReveal() {
   return {
     wrapperRef,
     logoRef,
+    countdownRef,
+    overlayRef,
   };
 }

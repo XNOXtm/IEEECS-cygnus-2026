@@ -14,30 +14,15 @@ function App() {
 
   return (
     <>
-      {showLoader && (
-        <Loader
-          progress={progress}
-          isFading={isFading}
-        />
-      )}
+      {showLoader && <Loader progress={progress} isFading={isFading} />}
 
       {isComplete && (
         <>
-          <audio
-            ref={audioRef}
-            loop
-            preload="auto"
-          >
-            <source
-              src="/audio/stranger_things.mp3"
-              type="audio/mpeg"
-            />
+          <audio ref={audioRef} loop preload="auto">
+            <source src="/audio/stranger_things.mp3" type="audio/mpeg" />
           </audio>
 
-          <Header
-            isPlaying={isPlaying}
-            onToggle={toggleAudio}
-          />
+          <Header isPlaying={isPlaying} onToggle={toggleAudio} />
 
           <Hero />
 
