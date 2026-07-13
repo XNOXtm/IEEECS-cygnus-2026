@@ -1,9 +1,9 @@
-import "../../styles/content.css";
+import "../../styles/reveal.css";
 import { StickyLogo } from "./StickyLogo";
 
-export function Content() {
+export function Reveal() {
   return (
-    <section className="content">
+    <section className="reveal">
       <StickyLogo />
     </section>
   );

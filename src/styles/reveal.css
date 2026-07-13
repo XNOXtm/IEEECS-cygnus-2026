@@ -1,4 +1,4 @@
-.content {
+.reveal {
   position: relative;
   z-index: 3;
   margin-top: 100vh;
@@ -7,16 +7,22 @@
 }
 
 .sticky-logo {
-  display: block;
-
-  width: 66vw;
-  max-width: 800px;
-  height: auto;
-
-  margin: 0 auto;
-
   position: sticky;
+
   top: 50%;
 
   transform: translateY(-50%);
+
+  width: min(66vw, 800px);
+
+  display: block;
+
+  margin: auto;
+  will-change: transform, opacity;
+}
+
+.sticky-logo-wrapper {
+  height: 350vh;
+
+  position: relative;
 }

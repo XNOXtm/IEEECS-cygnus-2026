@@ -1,7 +1,7 @@
 import { Header } from "./components/Header/Header";
 import { Loader } from "./components/Loader/Loader";
 import { Hero } from "./components/Hero/Hero";
-import { Content } from "./components/Content/Content";
+import { Reveal } from "./components/Reveal/Reveal";
 import { Footer } from "./components/Footer/Footer";
 
 import { useLoader } from "./hooks/useLoader";
@@ -41,7 +41,7 @@ function App() {
 
           <Hero />
 
-          <Content />
+          <Reveal />
 
           <Footer />
         </>
