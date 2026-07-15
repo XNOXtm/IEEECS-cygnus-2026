@@ -3,6 +3,7 @@ import { Loader } from "./components/Loader/Loader";
 import { Hero } from "./components/Hero/Hero";
 import { Reveal } from "./components/Reveal/Reveal";
 import { Footer } from "./components/Footer/Footer";
+import { Countdown } from "./components/Countdown/Countdown";
 
 import { useLoader } from "./hooks/useLoader";
 import { useAudio } from "./hooks/useAudio";
@@ -27,6 +28,8 @@ function App() {
           <Hero />
 
           <Reveal />
+
+          <Countdown />
 
           <Footer />
         </>

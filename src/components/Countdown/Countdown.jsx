@@ -6,13 +6,13 @@ import { AccessPanel } from "../AccessPanel/AccessPanel";
 
 import { useCountdown } from "../../hooks/useCountdown";
 
-export function Countdown({ countdownRef }) {
+export function Countdown() {
   const target = new Date("2026-08-14T10:00:00");
 
   const { days, hours, minutes, seconds } = useCountdown(target);
 
   return (
-    <div ref={countdownRef} className="countdown">
+    <div className="countdown">
       <h2>TRANSMISSION INITIALIZING</h2>
 
       <div className="countdown-display">
