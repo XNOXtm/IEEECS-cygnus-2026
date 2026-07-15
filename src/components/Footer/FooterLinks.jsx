@@ -10,9 +10,7 @@ export function FooterLinks() {
     <section className="footer-bottom">
       <div className="footer-divider" />
 
-      <p className="copyright">
-        © 2026 IEEE CS SBC GHRCE. All rights reserved.
-      </p>
+      <p className="copyright">© 2026 IEEE CS GHRCE. All rights reserved.</p>
 
       <button className="terms" onClick={() => setShowTerms(true)}>
         Terms & Conditions

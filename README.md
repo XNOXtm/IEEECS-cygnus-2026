@@ -51,8 +51,8 @@ npm run build
 ## Authors
 
 Tushar Mishra
-IEEE Computer Society SBC GHRCE
+IEEE Computer Society GHRCE
 
 ## License
 
-This project is created for IEEE CS SBC GHRCE.
+This project is created for IEEE CS GHRCE.
