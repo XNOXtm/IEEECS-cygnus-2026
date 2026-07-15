@@ -1,16 +1,58 @@
-# React + Vite
+# CYGNUS 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Stranger Things-inspired event website built for the IEEE Computer Society Student Branch Chapter, GHRCE.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Cinematic loader
+- Parallax hero section
+- Scroll-driven logo reveal
+- Live countdown
+- Transmission terminal panel
+- Stranger Things themed UI
+- Responsive design
+- Animated particle system
+- Event gallery (upcoming)
+- Contact section
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- CSS3
+- JavaScript
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# CYGNUS 2026
+
+## Hero
+
+![Hero](./screenshots/Cygnus_hero.png)
+
+## Countdown
+
+![Countdown](./screenshots/cygnus_countdown.png)
+
+## Footer
+
+![Footer](./screenshots/cygnus_footer.png)
+
+## Getting Started
+
+git clone https://github.com/XNOXtm/IEEECS-cygnus-2026.git
+npm install
+npm run dev
+
+## Build
+
+npm run build
+
+## Authors
+
+Tushar Mishra
+IEEE Computer Society SBC GHRCE
+
+## License
+
+This project is created for IEEE CS SBC GHRCE.
