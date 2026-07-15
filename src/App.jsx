@@ -20,6 +20,10 @@ function App() {
       {isComplete && (
         <>
           <audio ref={audioRef} loop preload="auto">
+            <source
+              src="/audio/stranger_things2.opus"
+              type="audio/ogg; codecs=opus"
+            />
             <source src="/audio/stranger_things.mp3" type="audio/mpeg" />
           </audio>
 
