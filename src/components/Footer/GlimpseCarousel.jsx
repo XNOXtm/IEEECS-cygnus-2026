@@ -1,7 +1,11 @@
 export function GlimpseCarousel() {
   return (
-    <div className="glimpse-box">
-      <span>ARCHIVED TRANSMISSIONS UNAVAILABLE</span>
-    </div>
+    <section className="footer-section">
+      <h2 className="footer-heading">TRANSMISSION ARCHIVES</h2>
+
+      <div className="archive-frame">
+        <span>NO SIGNAL DETECTED</span>
+      </div>
+    </section>
   );
 }

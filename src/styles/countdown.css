@@ -36,6 +36,7 @@
 
   min-height: 100vh;
   margin-top: -25vh;
+  margin-bottom: 20vh;
 
   display: flex;
   justify-content: center;
@@ -47,6 +48,8 @@
 
 .countdown h2 {
   color: #ff2a2a;
+
+  font-family: "IBM Plex Mono", monospace;
 
   font-size: 2.2rem;
 
@@ -198,6 +201,7 @@
   font-size: var(--label-size);
   color: #ff2a2a;
   letter-spacing: 2px;
+  font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
   text-shadow:
     0 0 8px rgba(255, 42, 42, 0.8),
