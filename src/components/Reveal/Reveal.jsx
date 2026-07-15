@@ -1,19 +1,23 @@
 import "../../styles/reveal.css";
 import { StickyLogo } from "./StickyLogo";
 import { Countdown } from "../Countdown/Countdown";
+import { UpsideDownParticles } from "../Particles/Particles";
 import { useReveal } from "../../hooks/useReveal";
 
 export function Reveal() {
-  const reveal = useReveal();
+  const { wrapperRef, logoRef, overlayRef, countdownRef, showParticles } =
+    useReveal();
 
   return (
     <section className="reveal">
-      <div className="sticky-logo-wrapper" ref={reveal.wrapperRef}>
-        <StickyLogo logoRef={reveal.logoRef} />
+      <UpsideDownParticles visible={showParticles} />
 
-        <div className="reveal-overlay" ref={reveal.overlayRef} />
+      <div className="sticky-logo-wrapper" ref={wrapperRef}>
+        <StickyLogo logoRef={logoRef} />
 
-        <Countdown countdownRef={reveal.countdownRef} />
+        <div className="reveal-overlay" ref={overlayRef} />
+
+        <Countdown countdownRef={countdownRef} />
       </div>
     </section>
   );

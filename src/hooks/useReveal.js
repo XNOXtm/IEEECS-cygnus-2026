@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useReveal() {
   const wrapperRef = useRef(null);
   const logoRef = useRef(null);
   const countdownRef = useRef(null);
   const overlayRef = useRef(null);
+  const [showParticles, setShowParticles] = useState(false);
 
   useEffect(() => {
     function updateReveal() {
@@ -19,6 +20,12 @@ export function useReveal() {
         logoRef.current.style.opacity = 0;
         logoRef.current.style.transform = "translateY(-50%) scale(1)";
         return;
+      }
+
+      if (entered < vh * 1.1) {
+        setShowParticles(false);
+      } else {
+        setShowParticles(true);
       }
 
       // ------------------------
@@ -51,7 +58,7 @@ export function useReveal() {
 
       logoRef.current.style.opacity = 1 - zoomProgress;
       if (overlayRef.current) {
-        overlayRef.current.style.opacity = zoomProgress;
+        overlayRef.current.style.opacity = zoomProgress * 0.75;
       }
 
       if (countdownRef.current) {
@@ -81,5 +88,6 @@ export function useReveal() {
     logoRef,
     countdownRef,
     overlayRef,
+    showParticles,
   };
 }
