@@ -40,3 +40,13 @@
 
   z-index: 10;
 }
+
+@media (max-width: 768px) {
+  .sticky-logo {
+    width: min(90vw, 420px);
+  }
+
+  .sticky-logo-wrapper {
+    height: 160vh;
+  }
+}

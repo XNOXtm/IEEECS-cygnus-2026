@@ -70,6 +70,7 @@
   justify-content: center;
   gap: var(--gap-display);
   margin-bottom: 70px;
+  margin-top: 1rem;
 }
 
 .digit-wrapper {
@@ -206,4 +207,38 @@
   text-shadow:
     0 0 8px rgba(255, 42, 42, 0.8),
     0 0 15px rgba(255, 42, 42, 0.5);
+}
+
+:root {
+  --scale: 1;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --scale: 0.9;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --scale: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --scale: 0.65;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --scale: 0.5;
+  }
+}
+
+@media (max-width: 390px) {
+  :root {
+    --scale: 0.42;
+  }
 }
