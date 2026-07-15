@@ -38,6 +38,25 @@ export function FooterLinks() {
         </a>
       </div>
 
+      <p className="credits">
+        Made by{" "}
+        <a
+          href="https://github.com/YOUR_GITHUB_USERNAME"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Tushar Mishra
+        </a>{" "}
+        • Design by{" "}
+        <a
+          href="https://youtube.com/shorts/R1744z-Xzrk?si=l9KSlzQzfsjre1Sm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Krishna Batra
+        </a>
+      </p>
+
       {showTerms && (
         <div className="terms-overlay" onClick={() => setShowTerms(false)}>
           <div className="terms-modal" onClick={(e) => e.stopPropagation()}>
